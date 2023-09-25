@@ -7,6 +7,14 @@ from person
 group by email
 having count(email) >1
 
+-- 183. Customers Who Never Order
+select
+name as Customers
+from
+customers c
+left join orders o on c.id = o.customerid
+where o.customerid is null
+  
 -- 586. Customer Placing the Largest Number of Orders
 select top 1
 customer_number
