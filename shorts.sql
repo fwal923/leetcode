@@ -1,5 +1,12 @@
 -- MS SQL Server
 
+-- 182. Duplicate Emails
+select
+email Email
+from person
+group by email
+having count(email) >1
+
 -- 595. Big Countries
 select
 name, population, area
