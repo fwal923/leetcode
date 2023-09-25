@@ -59,6 +59,5 @@ managerid as managers_id,
 count(managerid) as direct_reports
 from employee
 where managerid is not null
-group by managerid) as temp on employee.id = temp.managers_id
-where temp.direct_reports >= 5
-group by employee.name
+group by managerid
+having count(managerid) >= 5) as temp on employee.id = temp.managers_id
